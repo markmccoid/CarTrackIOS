@@ -1,0 +1,3 @@
+rootProject.name = 'CarTrackeriOS'
+
+include ':app'
