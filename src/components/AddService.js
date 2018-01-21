@@ -173,19 +173,27 @@ const styles = EStyleSheet.create({
   textInput: {
     height: '$inputBoxSize',
     fontSize: '$inputFontSize',
-    marginTop: 1,
+    marginTop: 5,
+    marginLeft: 5,
+    marginRight: 5,
     padding: 5,
+    borderRadius: 10,
     backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex()
   },
   textInputMulti: {
     height: '$inputBoxSize * 2',
     fontSize: '$inputFontSize',
-    marginTop: 1,
+    marginTop: 5,
+    marginLeft: 5,
+    marginRight: 5,
     padding: 5,
+    borderRadius: 10,
     backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex(),
   },
   dateContainer: {
-    marginTop: 1,
+    marginTop: 5,
+    marginLeft: 5,
+    marginRight: 5,
     backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex(),
   },
   dateText: {

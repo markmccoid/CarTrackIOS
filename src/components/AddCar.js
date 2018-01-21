@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Modal, View, Text, 
   StyleSheet, Button, TextInput } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import Color from 'color';
 
 class AddCar extends React.Component {
   state = {
@@ -34,6 +35,7 @@ class AddCar extends React.Component {
     formFieldsJSX = (
     <View style={styles.inputView}>
       <TextInput 
+        autoFocus={true}
         style={styles.textInput}
         value={this.state.nickName}
         onChangeText={(text) => this.setState({ nickName: text })}
@@ -109,25 +111,31 @@ class AddCar extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   mainView: {
   },
   inputView: {
     margin: 5,
   },
   textInput: {
-    height: 30,
+    height: '$inputBoxSize',
+    fontSize: '$inputFontSize',
     marginTop: 5,
+    marginLeft: 5,
+    marginRight: 5,
     padding: 5,
-    borderColor: 'gray',
-    borderWidth: 1,
+    borderRadius: 10,
+    backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex()
   },
   textInputMulti: {
-    height: 60,
+    height: '$inputBoxSize * 2',
+    fontSize: '$inputFontSize',
     marginTop: 5,
+    marginLeft: 5,
+    marginRight: 5,
     padding: 5,
-    borderColor: 'gray',
-    borderWidth: 1,
+    borderRadius: 10,
+    backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex(),
   },
   pickerContainer: {
     flex: 1,
