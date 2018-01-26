@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal, View, Text, 
+import { Modal, View, Text, TouchableWithoutFeedback,
   StyleSheet, Button, TextInput } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Color from 'color';
 import { Picker, List } from 'antd-mobile'; 
 import moment from 'moment';
+import _ from 'lodash';
 // https://github.com/xgfe/react-native-datepicker
 import DatePicker from 'react-native-datepicker'
 
@@ -20,7 +21,6 @@ class AddService extends React.Component {
     carId: this.props.service ? this.props.service.carId : this.props.cars[0].id
   }
   createServiceObj = () => {
-    console.log(this.state.serviceCost);
     return {
       serviceCost: this.state.serviceCost * 100,
       serviceDate: moment(this.state.serviceDate, 'MM-DD-YYYY').valueOf(),
@@ -36,6 +36,28 @@ class AddService extends React.Component {
   handleEditService = () => {
     this.props.onEditService(this.props.service.id, this.createServiceObj());
   }
+
+  //passed to SelectServiceScreen to handle when selected service is returned
+  handleReturnedService = (serviceDescription) => {
+    console.log( serviceDescription );
+    this.setState({ serviceDescription }) 
+    this.props.navigator.pop();
+    this.cost.focus()
+  }
+  // shows SelectServiceScreen
+  handleSelectItem = () => {
+    //Push Select Service Screen
+    this.props.navigator.push({
+      screen: 'car-tracker.SelectServiceScreen',
+      title: 'Select Service',
+      passProps: {
+        onReturnService: this.handleReturnedService,
+        selectItems: _.sortBy(_.uniq(this.props.serviceDescriptions))},
+      animated: true,
+      animationType: 'fade',
+    });
+  }
+
   render() {
     // When using the antd picker, you must provide an initial "value" or you get chinese characters
     const pickerData = this.props.cars.map(carData => ({
@@ -62,17 +84,14 @@ class AddService extends React.Component {
         <List.Item arrow="horizontal">Choose Car</List.Item>
         </Picker>
       </List>
-        {/* <PickerIOS
-          style={{width: 200, height: 44, margin: 0}}
-          itemStyle={{fontSize: 15}}
-          selectedValue="12345"
-          onValueChange={(itemValue, itemIndex) => console.log(itemValue, itemIndex)}  
-        >
-          <PickerIOS.Item label="Tesla" value="12345" />
-          <PickerIOS.Item label="Versa" value="12445" />
-        </PickerIOS> */}
+      
+      <TouchableWithoutFeedback onPress={this.handleSelectItem}>
+        <View>
+          <Text style={styles.textInput}>Service: {this.state.serviceDescription} </Text>
+        </View>
+      </TouchableWithoutFeedback>
 
-      <TextInput 
+      {/* <TextInput 
         style={styles.textInput}
         value={this.state.serviceDescription}
         onChangeText={(text) => this.setState({ serviceDescription: text })}
@@ -80,7 +99,8 @@ class AddService extends React.Component {
         returnKeyType="next"
         autoCapitalize="words"
         onSubmitEditing={() => this.cost.focus()}
-      />
+      /> */}
+
       <TextInput 
         style={styles.textInput}
         value={this.state.serviceCost}
@@ -154,6 +174,8 @@ class AddService extends React.Component {
   static propTypes = {
     cars: PropTypes.array,
     service: PropTypes.object,
+    serviceDescriptions: PropTypes.array,
+    serviceProviders: PropTypes.array,
     onAddService: PropTypes.func,
     onEditService: PropTypes.func
   }

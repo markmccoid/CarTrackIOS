@@ -82,6 +82,14 @@ const styles = StyleSheet.create({
   },  
   flatlistView: {
     marginBottom: 30,
+  },  
+  floatView: {
+    position: 'absolute',
+    width:100,
+    height: 100, 
+    top: 200,
+    left: 40,
+    backgroundColor: 'green',
   }
 });
 

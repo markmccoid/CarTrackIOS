@@ -27,8 +27,11 @@ class AddServiceScreen extends React.Component {
         <AddService 
           cars={this.props.cars}
           service={this.props.services.find(service => service.id === this.props.serviceId)}
+          serviceDescriptions={this.props.services.map(service => service.serviceDescription)}
+          serviceProviders={this.props.services.map(service => service.serviceProvider  )}
           onAddService={this.handleAddService}
           onEditService={this.handleEditService}
+          navigator={this.props.navigator}
         />
       </View>
     );

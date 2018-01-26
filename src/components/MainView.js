@@ -59,6 +59,9 @@ class MainView extends React.Component {
             }
           }
         />
+        <View style={styles.floatView}>
+          <Text> FLOATING </Text>
+        </View>
         <Button block style={styles.button} onPress={this.onLogout}>
           <Text> Logout </Text>
         </Button>
@@ -71,6 +74,14 @@ const styles = StyleSheet.create({
   mainContainer: {
     justifyContent: 'center',
   },  
+  floatView: {
+    position: 'absolute',
+    width:100,
+    height: 100, 
+    top: 200,
+    left: 40,
+    backgroundColor: 'green',
+  }
 });
 
 export default MainView;
