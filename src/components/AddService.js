@@ -9,7 +9,9 @@ import moment from 'moment';
 import _ from 'lodash';
 // https://github.com/xgfe/react-native-datepicker
 import DatePicker from 'react-native-datepicker'
+import Icon from 'react-native-vector-icons/Ionicons'
 
+import SearchSelectInitiator from './SelectScreen/SearchSelectInitiator';
 
 class AddService extends React.Component {
   state = {
@@ -39,20 +41,38 @@ class AddService extends React.Component {
 
   //passed to SelectServiceScreen to handle when selected service is returned
   handleReturnedService = (serviceDescription) => {
-    console.log( serviceDescription );
     this.setState({ serviceDescription }) 
     this.props.navigator.pop();
     this.cost.focus()
   }
+  //passed to SelectScreenBase to handle when selected service provider is returned
+  handleReturnedServiceProvider = (serviceProvider) => {
+    this.setState({ serviceProvider }) 
+    this.props.navigator.pop();
+    this.note.focus()
+  }
   // shows SelectServiceScreen
-  handleSelectItem = () => {
+  handleSelectDescription = () => {
     //Push Select Service Screen
     this.props.navigator.push({
-      screen: 'car-tracker.SelectServiceScreen',
+      screen: 'car-tracker.SearchSelectScreen',
       title: 'Select Service',
       passProps: {
         onReturnService: this.handleReturnedService,
         selectItems: _.sortBy(_.uniq(this.props.serviceDescriptions))},
+      animated: true,
+      animationType: 'fade',
+    });
+  }
+  // shows SelectServiceScreen
+  handleSelectProvider = () => {
+    //Push Select Service Screen
+    this.props.navigator.push({
+      screen: 'car-tracker.SearchSelectScreen',
+      title: 'Select Provider',
+      passProps: {
+        onReturnService: this.handleReturnedServiceProvider,
+        selectItems: _.sortBy(_.uniq(this.props.serviceProviders))},
       animated: true,
       animationType: 'fade',
     });
@@ -84,22 +104,11 @@ class AddService extends React.Component {
         <List.Item arrow="horizontal">Choose Car</List.Item>
         </Picker>
       </List>
-      
-      <TouchableWithoutFeedback onPress={this.handleSelectItem}>
-        <View>
-          <Text style={styles.textInput}>Service: {this.state.serviceDescription} </Text>
-        </View>
-      </TouchableWithoutFeedback>
-
-      {/* <TextInput 
-        style={styles.textInput}
-        value={this.state.serviceDescription}
-        onChangeText={(text) => this.setState({ serviceDescription: text })}
-        placeholder="Service Description"
-        returnKeyType="next"
-        autoCapitalize="words"
-        onSubmitEditing={() => this.cost.focus()}
-      /> */}
+      <SearchSelectInitiator
+        onPress={this.handleSelectDescription}
+        label="Service:"
+        returnValue={this.state.serviceDescription}
+      />
 
       <TextInput 
         style={styles.textInput}
@@ -112,15 +121,10 @@ class AddService extends React.Component {
         ref={(input) => this.cost = input}
         onSubmitEditing={() => this.provider.focus()}
       />
-      <TextInput 
-        style={styles.textInput}
-        value={this.state.serviceProvider}
-        onChangeText={(text) => this.setState({ serviceProvider: text })}
-        placeholder="Service Provider"
-        returnKeyType="next"
-        autoCapitalize="words"
-        ref={(input) => this.provider = input}
-        onSubmitEditing={() => this.note.focus()}
+      <SearchSelectInitiator
+        onPress={this.handleSelectProvider}
+        label="Service Provider:"
+        returnValue={this.state.serviceProvider}
       />
       <TextInput 
         style={styles.textInputMulti}
@@ -189,37 +193,56 @@ const styles = EStyleSheet.create({
   carContainer: {
     backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex()
   },
+  selectContainer:{
+    backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex(),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    marginTop: 5,
+  },
   inputView: {
     marginVertical: 5,
   },
+  selectInput: {
+    height: '$inputBoxSize',
+    fontSize: 18,
+    // marginLeft: 5,
+    // marginRight: 5,
+    padding: 5,
+    // borderRadius: 10,
+    backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex(),
+  },
   textInput: {
     height: '$inputBoxSize',
-    fontSize: '$inputFontSize',
+    fontSize: 18,
     marginTop: 5,
-    marginLeft: 5,
-    marginRight: 5,
-    padding: 5,
-    borderRadius: 10,
-    backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex()
+    // marginLeft: 5,
+    // marginRight: 5,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    // borderRadius: 10,
+    backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex(),
   },
   textInputMulti: {
     height: '$inputBoxSize * 2',
-    fontSize: '$inputFontSize',
+    fontSize: 18,
     marginTop: 5,
-    marginLeft: 5,
-    marginRight: 5,
-    padding: 5,
-    borderRadius: 10,
+    // marginLeft: 5,
+    // marginRight: 5,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    // borderRadius: 10,
     backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex(),
   },
   dateContainer: {
     marginTop: 5,
-    marginLeft: 5,
-    marginRight: 5,
+    // marginLeft: 5,
+    // marginRight: 5,
     backgroundColor: () => Color(EStyleSheet.value('$inputBgColor')).lighten(0.5).hex(),
   },
   dateText: {
-    fontSize: 24,
+    fontSize: 18,
   },
 });
 export default AddService;

@@ -22,7 +22,8 @@ import ServiceListScreen from './src/screens/mainScreens/ServiceListScreen';
 import CarScreen from './src/screens/mainScreens/CarScreen';
 import AddServiceScreen from './src/screens/mainScreens/AddServiceScreen';
 import AddCarScreen from './src/screens/mainScreens/AddCarScreen';
-import SelectServiceScreen from './src/screens/selectScreens/SelectServiceScreen';
+//import SelectServiceScreen from './src/screens/selectScreens/SelectServiceScreen';
+import SearchSelectScreen from './src/screens/selectScreens/SearchSelectScreen';
 import startTabs from './src/screens/mainTabs/startMainTab';
 
 // Run Build step in extended styles component
@@ -38,7 +39,8 @@ Navigation.registerComponent('car-tracker.ServiceListScreen', () => ServiceListS
 Navigation.registerComponent('car-tracker.CarScreen', () => CarScreen, store, Provider);
 Navigation.registerComponent('car-tracker.AddServiceScreen', () => AddServiceScreen, store, Provider);
 Navigation.registerComponent('car-tracker.AddCarScreen', () => AddCarScreen, store, Provider);
-Navigation.registerComponent('car-tracker.SelectServiceScreen', () => SelectServiceScreen, store, Provider);
+//Navigation.registerComponent('car-tracker.SelectServiceScreen', () => SelectServiceScreen, store, Provider);
+Navigation.registerComponent('car-tracker.SearchSelectScreen', () => SearchSelectScreen, store, Provider);
 
 //--Check auth state and if logged in set redux login state
 //--Then load initial data and redirect to initial page.
