@@ -20,21 +20,16 @@ class ServiceListScreen extends React.Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
   }
 
-  // Icons in header
-  static navigatorButtons = {
-    rightButtons: [
-      {
-        systemItem: 'add', // for icon button, provide the local image asset name
-        id: 'add', // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
-      }
-    ],
-    leftButtons: [
-      {
-        icon: require('../../images/navicon_logout.png'),
-        id: 'logout',
-      }
-    ]
-  };
+  // // Icons in header
+  // static navigatorButtons = {
+  //   rightButtons: [
+  //     {
+  //       systemItem: 'add', // for icon button, provide the local image asset name
+  //       id: 'add', // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
+  //     }
+  //   ],
+
+  // };
 
   onNavigatorEvent(event) { // this is the onPress handler for the two buttons together
     if (event.type === 'NavBarButtonPress') { // this is the event type for button presses
@@ -48,9 +43,12 @@ class ServiceListScreen extends React.Component {
           animationType: 'fade',
         });
       }
-      if(event.id === 'logout') {
-        firebase.auth().signOut()
-          .then(() => console.log('Signed Out'));
+      if(event.id === 'side-drawer') {
+        this.props.navigator.toggleDrawer({
+          side: 'left',
+        });
+        // firebase.auth().signOut()
+        //   .then(() => console.log('Signed Out'));
       }
     }
   }

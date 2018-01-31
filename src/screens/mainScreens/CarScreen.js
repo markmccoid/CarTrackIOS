@@ -15,21 +15,22 @@ class CarScreen extends React.Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
   }
 
-  // Icons in header
-  static navigatorButtons = {
-    rightButtons: [
-      {
-        systemItem: 'add', // for icon button, provide the local image asset name
-        id: 'add', // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
-      }
-    ],
-    leftButtons: [
-      {
-        icon: require('../../images/navicon_logout.png'),
-        id: 'logout',
-      }
-    ]
-  };
+  // --BELOW MOVED TO startMainTab.js
+  // // Icons in header
+  // static navigatorButtons = {
+  //   rightButtons: [
+  //     {
+  //       systemItem: 'add', // for icon button, provide the local image asset name
+  //       id: 'add', // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
+  //     }
+  //   ],
+  //   leftButtons: [
+  //     {
+  //       icon: require('../../images/navicon_logout.png'),
+  //       id: 'logout',
+  //     }
+  //   ]
+  // };
 
   onNavigatorEvent(event) { // this is the onPress handler for the two buttons together
     console.log('ServiceLIstscreen', event)
