@@ -1,7 +1,8 @@
 //--------------------------
 //--Filter Action creators
 //--------------------------
-import { SET_TEXT_FILTER, SET_CAR_FILTER, SORTBY_DATE, SORTBY_AMOUNT, SET_START_DATE, SET_END_DATE } from './actionTypes';
+import { SET_TEXT_FILTER, SET_CAR_FILTER, SORTBY_DATE, SORTBY_AMOUNT, 
+  SET_START_DATE, SET_END_DATE, SET_DRAWER_SCREEN } from './actionTypes';
 
 // SET_TEXT_FILTER
 export const setTextFilter = (text) => {
@@ -38,3 +39,7 @@ export const setEndDate = (endDate = undefined) => (
     endDate
   }
 );
+
+// DRAWER SCREEN 
+// screen = 'cars', 'services'
+export const setDrawerContents = (screen) => ({ type: SET_DRAWER_SCREEN, screen })

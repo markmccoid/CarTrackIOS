@@ -36,6 +36,13 @@ const startTabs = () => {
           icon: sources[1],
           title: 'Car List',
           navigatorButtons: {
+            leftButtons: [
+              {
+                icon: sources[2],
+                id: 'side-drawer',
+                title: 'Side Menu'
+              }
+            ],
             rightButtons: [
               {
                 systemItem: 'add', // for icon button, provide the local image asset name
@@ -48,7 +55,8 @@ const startTabs = () => {
       drawer: {
         left: {
           screen: 'car-tracker.SideDrawer'
-        }
+        },
+        disableOpenGesture: true,
       }
     });
   })

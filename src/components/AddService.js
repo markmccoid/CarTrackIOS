@@ -43,13 +43,12 @@ class AddService extends React.Component {
   handleReturnedService = (serviceDescription) => {
     this.setState({ serviceDescription }) 
     this.props.navigator.pop();
-    this.cost.focus()
   }
   //passed to SelectScreenBase to handle when selected service provider is returned
   handleReturnedServiceProvider = (serviceProvider) => {
     this.setState({ serviceProvider }) 
     this.props.navigator.pop();
-    this.note.focus()
+    this.cost.focus()
   }
   // shows SelectServiceScreen
   handleSelectDescription = () => {
@@ -110,6 +109,12 @@ class AddService extends React.Component {
         returnValue={this.state.serviceDescription}
       />
 
+      <SearchSelectInitiator
+        onPress={this.handleSelectProvider}
+        label="Service Provider:"
+        returnValue={this.state.serviceProvider}
+      />
+
       <TextInput 
         style={styles.textInput}
         value={this.state.serviceCost}
@@ -121,11 +126,7 @@ class AddService extends React.Component {
         ref={(input) => this.cost = input}
         onSubmitEditing={() => this.provider.focus()}
       />
-      <SearchSelectInitiator
-        onPress={this.handleSelectProvider}
-        label="Service Provider:"
-        returnValue={this.state.serviceProvider}
-      />
+
       <TextInput 
         style={styles.textInputMulti}
         value={this.state.serviceNote}

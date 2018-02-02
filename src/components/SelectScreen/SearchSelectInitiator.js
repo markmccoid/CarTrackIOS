@@ -8,8 +8,11 @@ const SearchSelectInitiator = (props) => {
   return (
     <TouchableWithoutFeedback onPress={props.onPress}>
     <View style={styles.selectContainer}>
-      <Text style={styles.selectInput}>{props.label} {props.returnValue} </Text>
-      <Icon name='ios-arrow-forward' size={20} />
+      <Text style={styles.selectInput}>{props.label} </Text>
+      <View style={styles.returnValue}>
+        <Text style={styles.selectInput}>{props.returnValue} </Text>
+        <Icon name='ios-arrow-forward' size={20} />
+      </View>
     </View>
   </TouchableWithoutFeedback>
   );
@@ -39,6 +42,10 @@ const styles = StyleSheet.create({
     // borderRadius: 10,
     backgroundColor: '#fff',
   },
+  returnValue: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  }
 });
 
 export default SearchSelectInitiator;

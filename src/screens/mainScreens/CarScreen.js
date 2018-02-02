@@ -5,6 +5,7 @@ import { View, Text, Button } from 'react-native';
 import { firebase } from '../../firebase/firebase';
 
 import { startRemoveCar } from '../../actions/cars';
+import { setDrawerContents } from '../../actions/filters';
 import CarList from '../../components/CarList';
 
 
@@ -45,9 +46,11 @@ class CarScreen extends React.Component {
           animationType: 'fade',
         });
       }
-      if(event.id === 'logout') {
-        firebase.auth().signOut()
-          .then(() => console.log('Signed Out'));
+      if(event.id === 'side-drawer') {
+        this.props.setDrawerContents('car');
+        this.props.navigator.toggleDrawer({
+          side: 'left',
+        });
       }
     }
   }
@@ -88,4 +91,6 @@ const mapStateToProps = (state) => {
     }
   )
 }
-export default connect(mapStateToProps, { startRemoveCar: startRemoveCar })(CarScreen);
+export default connect(mapStateToProps, { 
+  startRemoveCar: startRemoveCar, 
+  setDrawerContents: setDrawerContents })(CarScreen);

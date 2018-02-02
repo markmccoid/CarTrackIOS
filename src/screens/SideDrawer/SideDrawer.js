@@ -8,9 +8,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 class SideDrawer extends React.Component {
   render() {
-    return (
-      <View style={styles.mainContainer}>
-        <View style={styles.optionsContainer}>
+    const { screen } = this.props.filters;
+    let sortJSX = null;
+    if (screen === 'service') {
+      sortJSX = (
+        <View>
           <View style={styles.header}>
             <Text style={styles.headerText}>Sort Options</Text>
           </View>
@@ -42,6 +44,13 @@ class SideDrawer extends React.Component {
               onPress={this.props.sortByAmount} 
             />
           </View>
+        </View>
+      );
+    }
+    return (
+      <View style={styles.mainContainer}>
+        <View style={styles.optionsContainer}>
+          {sortJSX}
         </View>
         <View style={styles.logoutContainer}>
           <Button title='LOGOUT' onPress={this.props.startLogout} />

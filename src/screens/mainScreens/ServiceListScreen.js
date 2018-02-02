@@ -11,7 +11,7 @@ import { firebase } from '../../firebase/firebase';
 
 import serviceSelector from '../../store/serviceSelector';
 import { startRemoveService } from '../../actions/services';
-import { setTextFilter, setCarFilter} from '../../actions/filters';
+import { setTextFilter, setCarFilter, setDrawerContents } from '../../actions/filters';
 
 class ServiceListScreen extends React.Component {
   constructor(props) {
@@ -44,6 +44,7 @@ class ServiceListScreen extends React.Component {
         });
       }
       if(event.id === 'side-drawer') {
+        this.props.setDrawerContents('service');
         this.props.navigator.toggleDrawer({
           side: 'left',
         });
@@ -79,7 +80,16 @@ class ServiceListScreen extends React.Component {
     }
     // Build new array with car details
     let newServiceArray = hydrateServices(this.props.services, this.props.cars);
-    
+    console.log(newServiceArray)
+    if (newServiceArray.length === 0) {
+      return (
+        <View>
+          <Text>
+            To Begin - Add A Car and then Add Service Records
+          </Text>
+        </View>
+      )
+    }
     //TEST Nested FlatList
     let ComponentData = [
       <ServiceSummary key={2} services={newServiceArray}/>,
@@ -100,6 +110,7 @@ class ServiceListScreen extends React.Component {
           />
         </View>
       );
+
     //--------------------
     return (
       <View style={{ flex: 1,alignItems: 'stretch' }}>
@@ -132,5 +143,6 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, { 
   onRemoveService: startRemoveService,
   onServiceFilter: setTextFilter,
-  onCarFilter: setCarFilter
+  onCarFilter: setCarFilter,
+  setDrawerContents: setDrawerContents
 })(ServiceListScreen);

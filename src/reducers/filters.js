@@ -1,5 +1,6 @@
 import moment from 'moment';
-import { SET_TEXT_FILTER, SET_CAR_FILTER, SORTBY_DATE, SORTBY_AMOUNT, SET_START_DATE, SET_END_DATE } from '../actions/actionTypes';
+import { SET_TEXT_FILTER, SET_CAR_FILTER, SORTBY_DATE, SORTBY_AMOUNT, 
+  SET_START_DATE, SET_END_DATE, SET_DRAWER_SCREEN } from '../actions/actionTypes';
 //--------------------------
 //--Filters reducer
 //--------------------------
@@ -24,6 +25,8 @@ export default (state = filtersReducerDefault, action) => {
       return { ...state, startDate: action.startDate };
     case SET_END_DATE:
       return { ...state, endDate: action.endDate };
+    case SET_DRAWER_SCREEN:
+      return { ...state, screen: action.screen }
     default:
       return state;
   }
