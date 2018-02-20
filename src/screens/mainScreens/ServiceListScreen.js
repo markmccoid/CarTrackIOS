@@ -80,12 +80,23 @@ class ServiceListScreen extends React.Component {
     }
     // Build new array with car details
     let newServiceArray = hydrateServices(this.props.services, this.props.cars);
-    console.log(newServiceArray)
-    if (newServiceArray.length === 0) {
+    console.log(this.props.cars)
+    if (newServiceArray.length === 0 && this.props.cars.length === 0) {
       return (
         <View>
+          <ServiceFilter serviceFilterProps={serviceFilterProps}/>
           <Text>
-            To Begin - Add A Car and then Add Service Records
+            To Begin - Touch the "Cars" tab and Add a Car (+ in right corner), 
+            then touch the "Services" tab and Add Service Records (+ in right corner).
+          </Text>
+        </View>
+      )
+    } else if (newServiceArray.length === 0 && this.props.cars.length !== 0) {
+      return (
+        <View>
+          <ServiceFilter serviceFilterProps={serviceFilterProps}/>
+          <Text>
+            There are no services for the selected car, Add Service Records (+ in right corner).
           </Text>
         </View>
       )
@@ -112,20 +123,20 @@ class ServiceListScreen extends React.Component {
       );
 
     //--------------------
-    return (
-      <View style={{ flex: 1,alignItems: 'stretch' }}>
-      <ServiceSummary services={newServiceArray}/>
-        <ServiceFilter serviceFilterProps={serviceFilterProps}/>
+    // return (
+    //   <View style={{ flex: 1,alignItems: 'stretch' }}>
+    //   <ServiceSummary services={newServiceArray}/>
+    //     <ServiceFilter serviceFilterProps={serviceFilterProps}/>
         
-        <View style={{ paddingBottom: 45, }}>
-          <ServiceList 
-            services={newServiceArray} 
-            onRemoveService={this.props.onRemoveService}
-            showEditServiceScreen={this.showEditServiceScreen}
-          />
-        </View>
-      </View>
-    );
+    //     <View style={{ paddingBottom: 45, }}>
+    //       <ServiceList 
+    //         services={newServiceArray} 
+    //         onRemoveService={this.props.onRemoveService}
+    //         showEditServiceScreen={this.showEditServiceScreen}
+    //       />
+    //     </View>
+    //   </View>
+    // );
   }
 }
 

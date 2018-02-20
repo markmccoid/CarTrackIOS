@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal, View, Text, 
+import { Modal, View, Text, KeyboardAvoidingView,
   StyleSheet, Button, TextInput } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Color from 'color';
@@ -90,10 +90,7 @@ class AddCar extends React.Component {
     </View>
   );
     return (
-        <View style={styles.mainView}>
-          <View>
-            {formFieldsJSX}
-          </View>
+        <KeyboardAvoidingView style={styles.mainView}>
           <View>
             {this.props.car ?
               <Button title='Update' onPress={this.handleEditCar} />
@@ -101,7 +98,10 @@ class AddCar extends React.Component {
               <Button title='Save' onPress={this.handleAddCar} />
             }
           </View>
-        </View>
+          <View>
+            {formFieldsJSX}
+          </View>
+        </KeyboardAvoidingView>
     );
   }
   static propTypes = {
@@ -113,6 +113,8 @@ class AddCar extends React.Component {
 
 const styles = EStyleSheet.create({
   mainView: {
+    backgroundColor: '$inputBgColor',
+    height: '100%'
   },
   inputView: {
     margin: 5,

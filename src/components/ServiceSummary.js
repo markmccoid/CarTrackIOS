@@ -6,7 +6,6 @@ import { serviceSummary } from '../store/serviceSummary';
 
 const ServiceSummary = (props) => {
   let summary = serviceSummary(props.services);
-  console.log('SUMMARY', summary)
   //Summary object
   // totalAmount
   // lastOilChange.carNickName
@@ -14,7 +13,11 @@ const ServiceSummary = (props) => {
   return (
     <View style={styles.errorContainer}>
       <Text style={styles.text}>Total Service Cost: {summary.totalAmount}</Text>
-      <Text style={styles.text}>{`Last Oil Change: ${summary.lastOilChange.carNickName} on ${summary.lastOilChange.serviceDate}`}</Text>
+      {summary.lastOilChange ? 
+        <Text style={styles.text}>{`Last Oil Change: ${summary.lastOilChange.carNickName} on ${summary.lastOilChange.serviceDate}`}</Text>
+        :
+        null
+      }
     </View>
   )
 };

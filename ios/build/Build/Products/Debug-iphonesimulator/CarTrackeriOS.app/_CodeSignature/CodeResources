@@ -4,9 +4,45 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AppIcon20x20@2x.png</key>
+		<data>
+		GNryJ0rIwsVTSevlS99PzYUbafM=
+		</data>
+		<key>AppIcon20x20@3x.png</key>
+		<data>
+		ZtJgIx2IWzsRzBV33tj0RgmCgho=
+		</data>
+		<key>AppIcon29x29@2x.png</key>
+		<data>
+		QpUtIfhXecXyfg+o0tWsYGZX4u0=
+		</data>
+		<key>AppIcon29x29@3x.png</key>
+		<data>
+		Wv8jkNLoKTlxrEs/3hr8djf1ntI=
+		</data>
+		<key>AppIcon40x40@2x.png</key>
+		<data>
+		RSHW1q4NCPRuSfsSZap5lMGEUes=
+		</data>
+		<key>AppIcon40x40@3x.png</key>
+		<data>
+		lSw7QAoGOlQ6J2qNvGW2tV9adN8=
+		</data>
+		<key>AppIcon60x60@2x.png</key>
+		<data>
+		lSw7QAoGOlQ6J2qNvGW2tV9adN8=
+		</data>
+		<key>AppIcon60x60@3x.png</key>
+		<data>
+		0FBbahmE5lyOeUtf/pC1K4EYmM0=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		WL+9GM30wqr5noIj2rOpnhvxQHU=
+		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		cpuF7xkrttU/SBYdfAWfONHJmQ4=
+		pIz6VCdUWzKI1YHMoXca4UGXdr0=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -51,7 +87,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NqoGmbkCM077J2GwQyyQpPRiNss=
+		k1HHfJWbE5/M0DkMd4Y/zh6++rU=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -67,32 +103,135 @@
 		</data>
 		<key>PlugIns/CarTrackeriOSTests.xctest.dSYM/Contents/Resources/DWARF/CarTrackeriOSTests</key>
 		<data>
-		9TJeCeQBsCD/4Krfa9zHAWRUnfo=
+		aOT7aXx6Xq/4TB14RLr8p9Y2k/c=
 		</data>
 		<key>PlugIns/CarTrackeriOSTests.xctest/CarTrackeriOSTests</key>
 		<data>
-		wqaCqxZZCOg3iVE9TCLbjSW42SQ=
+		5WhM1S38Beypq4tQmbJ14aepkiM=
 		</data>
 		<key>PlugIns/CarTrackeriOSTests.xctest/Info.plist</key>
 		<data>
-		624e0dwLgFvAn5C4kWzU7VG42iM=
+		Tsk7hk47eY0ksx+HbP3k+ITLm3U=
 		</data>
 		<key>PlugIns/CarTrackeriOSTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		DFu9fNok7ujz+6rcUo5cPVGz4xg=
+		Fo1bPrBpL0oNcAwum1rG4ZNmF0U=
+		</data>
+		<key>main.jsbundle</key>
+		<data>
+		dA1pvvG6RL/4AQUIYuZTQS41iJE=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AppIcon20x20@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GNryJ0rIwsVTSevlS99PzYUbafM=
+			</data>
+			<key>hash2</key>
+			<data>
+			cRE4BwwaERUthRWp8csF+sPqDifLa/JNHorY1764ZjQ=
+			</data>
+		</dict>
+		<key>AppIcon20x20@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZtJgIx2IWzsRzBV33tj0RgmCgho=
+			</data>
+			<key>hash2</key>
+			<data>
+			xL4aphFbv5Y3w21DNUNqdWAFqam8lWmaiSIY4i/QeaE=
+			</data>
+		</dict>
+		<key>AppIcon29x29@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QpUtIfhXecXyfg+o0tWsYGZX4u0=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ab+/0jwAIDzn3ygjNROojStaBOBtI2zjDl4aeT7+hz0=
+			</data>
+		</dict>
+		<key>AppIcon29x29@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Wv8jkNLoKTlxrEs/3hr8djf1ntI=
+			</data>
+			<key>hash2</key>
+			<data>
+			4k0aafNdD4O4PwAkb7ZE55EzyFDoe6orJy1BFRq/fBw=
+			</data>
+		</dict>
+		<key>AppIcon40x40@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RSHW1q4NCPRuSfsSZap5lMGEUes=
+			</data>
+			<key>hash2</key>
+			<data>
+			Q+kUt/9/BDjrGKZiUOf0GU+U6w5kdcL4WGhcZuEkkdI=
+			</data>
+		</dict>
+		<key>AppIcon40x40@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lSw7QAoGOlQ6J2qNvGW2tV9adN8=
+			</data>
+			<key>hash2</key>
+			<data>
+			RHMSxgdZsfhr6+KHwkODQXG5qBWZ/3T9rkf0+dcz1BY=
+			</data>
+		</dict>
+		<key>AppIcon60x60@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lSw7QAoGOlQ6J2qNvGW2tV9adN8=
+			</data>
+			<key>hash2</key>
+			<data>
+			RHMSxgdZsfhr6+KHwkODQXG5qBWZ/3T9rkf0+dcz1BY=
+			</data>
+		</dict>
+		<key>AppIcon60x60@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0FBbahmE5lyOeUtf/pC1K4EYmM0=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ch/QbYz4u4hssIAQewA3kmHM0FQEuTOAIP1WxWHtJ64=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WL+9GM30wqr5noIj2rOpnhvxQHU=
+			</data>
+			<key>hash2</key>
+			<data>
+			dlObIeasjstFMITKnMKglZDHeuEnizDV+aOSsqL6gak=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cpuF7xkrttU/SBYdfAWfONHJmQ4=
+			pIz6VCdUWzKI1YHMoXca4UGXdr0=
 			</data>
 			<key>hash2</key>
 			<data>
-			FSqxSJIpmYezPm6hNErU1w3UOVD6pjZb79mYvVTU7rg=
+			3EkZtLktTcVWz1jteE15uHGlgTaJYawty5TQW5UIn6o=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -222,44 +361,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9TJeCeQBsCD/4Krfa9zHAWRUnfo=
+			aOT7aXx6Xq/4TB14RLr8p9Y2k/c=
 			</data>
 			<key>hash2</key>
 			<data>
-			Zzsfupt1wVTuZ0O9OYUMOZ4M8/V4ttKW1sFGYDHDG8U=
+			mM0U808JbDrhvFg1Vn8htLgZP+pufXukgYAVZHlVR78=
 			</data>
 		</dict>
 		<key>PlugIns/CarTrackeriOSTests.xctest/CarTrackeriOSTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wqaCqxZZCOg3iVE9TCLbjSW42SQ=
+			5WhM1S38Beypq4tQmbJ14aepkiM=
 			</data>
 			<key>hash2</key>
 			<data>
-			JwyJ4y0bgD+0YBkGUHbIObR9Xhv/HmNEuKiSP4T5VAc=
+			rbaAo9LengR9frBHX8qq/GYNhNL4hqaMzJZLpdRh68U=
 			</data>
 		</dict>
 		<key>PlugIns/CarTrackeriOSTests.xctest/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			624e0dwLgFvAn5C4kWzU7VG42iM=
+			Tsk7hk47eY0ksx+HbP3k+ITLm3U=
 			</data>
 			<key>hash2</key>
 			<data>
-			YH6qd1fFo7z/ZLLyKh50LFLM/JvP1Tnqe/Ya+iZQxeY=
+			VZ6HypnyHJeI6zPvsABiyZfI6BpPWNnclP3pTNgz3og=
 			</data>
 		</dict>
 		<key>PlugIns/CarTrackeriOSTests.xctest/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DFu9fNok7ujz+6rcUo5cPVGz4xg=
+			Fo1bPrBpL0oNcAwum1rG4ZNmF0U=
 			</data>
 			<key>hash2</key>
 			<data>
-			8XjTmV4vYONLmu3ZM8Gkp2qUkjjTOTUhuQ3cnTEAscg=
+			A2WiNFMTfm+jIFFdf4kxUWr1xZwYKQ+s7MdyAznzao8=
+			</data>
+		</dict>
+		<key>main.jsbundle</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dA1pvvG6RL/4AQUIYuZTQS41iJE=
+			</data>
+			<key>hash2</key>
+			<data>
+			vR+AJeigS5Ay20jYxEPl+I/7SQBzSGiE0/B0zj8HIr0=
 			</data>
 		</dict>
 	</dict>

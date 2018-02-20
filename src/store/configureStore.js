@@ -10,10 +10,15 @@ import authReducer from '../reducers/auth';
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-    // Prevents Redux DevTools from re-dispatching all previous actions.
-    shouldHotReload: false
-  }) || compose;
+let composeEnhancers;
+if (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
+  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+      // Prevents Redux DevTools from re-dispatching all previous actions.
+      shouldHotReload: false
+    }) || compose;
+} else {
+  composeEnhancers = compose;
+}
 const enhancer = composeEnhancers(applyMiddleware(thunk, loggerMiddleware));
 
 export default () => {

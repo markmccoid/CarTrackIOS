@@ -50,7 +50,7 @@ class ServiceList extends React.Component {
                 right={swipeoutBtns}
                 autoClose={true}
                 rowID={index}
-                backgroundColor="#ff3b30"
+                backgroundColor="#2962FF"
                 // set state.activeRow to the carId (item.id)
                 onOpen={(sectionId, rowId) => {
                   console.log('RowId State: index', this.state.rowId, index);

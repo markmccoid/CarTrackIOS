@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal, View, Text, TouchableWithoutFeedback,
+import { Modal, View, Text, KeyboardAvoidingView, TouchableWithoutFeedback,
   StyleSheet, Button, TextInput } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Color from 'color';
@@ -50,6 +50,7 @@ class AddService extends React.Component {
     this.props.navigator.pop();
     this.cost.focus()
   }
+  
   // shows SelectServiceScreen
   handleSelectDescription = () => {
     //Push Select Service Screen
@@ -100,9 +101,10 @@ class AddService extends React.Component {
           okText="Ok"
           dismissText="Cancel"
         >
-        <List.Item arrow="horizontal">Choose Car</List.Item>
+        <List.Item arrow="horizontal">Choose Car:</List.Item>
         </Picker>
       </List>
+      
       <SearchSelectInitiator
         onPress={this.handleSelectDescription}
         label="Service:"
@@ -156,10 +158,7 @@ class AddService extends React.Component {
     </View>
   );
     return (
-        <View style={styles.mainView}>
-          <View>
-            {formFieldsJSX}
-          </View>
+        <KeyboardAvoidingView style={styles.mainView}>
           <View>
             {this.props.service ? 
               <Button 
@@ -173,7 +172,10 @@ class AddService extends React.Component {
               />
             }
           </View>
-        </View>
+          <View>
+            {formFieldsJSX}
+          </View>
+        </KeyboardAvoidingView>
     );
   }
   static propTypes = {
